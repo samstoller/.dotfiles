@@ -1,0 +1,31 @@
+# I use control+a for beginning-of-line, this remaps it to the tick/tilda key
+# escape ``
+
+startup_message off    # no copyright notice
+autodetach on          # never turn off else lose all win on exit
+deflogin off           # utmp setting that is on by default
+defscrollback 9999     # scrollback line num
+defutf8 on             # utf8 encoding
+nonblock on            # flow control blah blah
+msgwait 10             # display time in seconds
+
+bell_msg "*beep* on %" # % = win num
+vbell off              # audio bell stays on
+vbell_msg ""
+
+#term screen-256color
+#setenv LC_CTYPE en_US.UTF-8
+
+## Optional Stuff
+#verbose on
+#nethack on             # nerds!
+#term screen-256colorv  # also still unsure
+
+## Window 
+hardstatus on             # make sure state is on
+hardstatus alwayslastline #
+hardstatus string '%{= kG}%-Lw%{= kW}%50> %n%f* %t%{= kG}%+Lw%< %{= kG}%-=%c:%s%{-}'
+#hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m-%d %{W}%c %{g}]'
+#hardstatus string '%{= kG}%-Lw%{= kW}%50> %n*%f %t%{= kG}%+Lw%< %{= kG}%-=%D %m/%d/%y | %C:%s %A | %1`%{-}
+#hardstatus string "%{.bW}%-w%{.rW}%f%n %t%{-}%+w %=%{..G}[%H %l] %{..Y} %m/%d %c "
+#caption always    "%?%F%{-b bc}%:%{-b bb}%?%C|%D|%M %d|%H%?%F%{+u wb}%? %L=%-Lw%45>%{+b by}%n%f* %t%{-}%+Lw%-0<"
