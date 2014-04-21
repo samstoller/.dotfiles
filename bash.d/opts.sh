@@ -6,6 +6,7 @@
 shopt -s cdable_vars
 shopt -s cdspell
 shopt -s extglob
+shopt -s checkwinsize
 
 ## History
 export HISTSIZE=10000
