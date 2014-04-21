@@ -1,0 +1,7 @@
+config
+fnotify
+logs
+*.bak
+*.autosave
+sasl.auth
+saved_colors
