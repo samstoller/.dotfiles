@@ -1,3 +1,8 @@
+# source global definiton but only if not OSX
+# OSX sources in /etc/profile !
+#if [ "$OSTYPE" =~ ^darwin && -f /etc/bashrc ]; then
+#    source /etc/bashrc
+#fi
 BASHD="$HOME/.bash.d"
 
 [[ -d "$BASHD" ]] || return 1
