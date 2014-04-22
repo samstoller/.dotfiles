@@ -10,9 +10,10 @@ export MANPAGER="less -X"
 ## Editors
 if type subl >/dev/null 2>&1; then
     export EDITOR="subl -w"
-elif
+else
     export EDITOR="vim"
 fi
+
 export VISUAL=$EDITOR
 export SVN_EDITOR="vim"
 
