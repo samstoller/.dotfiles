@@ -24,7 +24,7 @@ if [[ "$OSTYPE" =~ ^darwin ]]; then
     }
 
     # Homebrew install of GNU grep
-    if type ggrep >/dev/null; then
+    if type ggrep >/dev/null 2>&1; then
         alias grep='ggrep '
     fi
 
@@ -44,9 +44,9 @@ alias findd="find . -type d -iname "
 alias psg="ps aux | grep "
 alias srpm="rpm -qa | grep -i "
 alias whois="whois -h whois-servers.net"
-if type grc >/dev/null; then
+if type grc >/dev/null 2>&1; then
     alias diff="grc diff"
-elif type colordiff >/dev/null; then
+elif type colordiff >/dev/null 2>&1; then
     alias diff="colordiff"
 fi
 
