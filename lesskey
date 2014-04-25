@@ -1,0 +1,9 @@
+#env
+LESS=-XrP?f%f  .Line %lb?L/%L.  Page %db?B/%D.  ?eEOF:?pb%pb\\% . .
+LESS_TERMCAP_mb=$'\e[01;31m'        # begin blinking
+LESS_TERMCAP_md=$'\e[01;38;5;208m'  # begin bold
+LESS_TERMCAP_me=$'\e[0m'            # end blink/bold
+LESS_TERMCAP_so=$'\e[01;38;5;123m'  # begin standout
+LESS_TERMCAP_se=$'\e[0m'            # end standout
+LESS_TERMCAP_us=$'\e[04;38;5;118m'  # begin underline
+LESS_TERMCAP_ue=$'\e[0m'            # end underline
