@@ -19,6 +19,7 @@
     safecrlf = true
     editor = vim
     whitespace = trailing-space,space-before-tab,-indent-with-non-tab,-cr-at-eol
+	excludesfile = /Users/cira/.gitignore_global
 [merge]
     tool = vimdiff
 [color]
@@ -41,3 +42,9 @@
     log = true
 [include]
     path = .gitconfig.user
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
