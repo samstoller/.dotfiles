@@ -11,9 +11,19 @@ alias .....="cd ../../../.."
 ## OSX
 if [[ "$OSTYPE" =~ ^darwin ]]; then
     
-    ## Logs
-    alias err-php="tail -F $HOME/Library/Logs/"
+    ## Mac
+    alias osxlogs="cd /var/log"
+    alias osxapplogs="cd $HOME/Library/Logs/"
     
+    ## PHP
+    alias phpini="sudo vim /usr/local/etc/php/5.4/php.ini"
+    alias phperr="tail -F /var/log/php_errors.log"
+
+    ## Apache
+    alias a2hosts="sudo vim /etc/hosts"
+    alias a2vhosts="sudo vim /etc/apache2/extra/httpd-vhosts.conf"
+    alias a2logs="cd /var/log/apache2"
+
     ## XBMC
     alias xbox="open /Applications/XBMC.app"
     function xlog() {
