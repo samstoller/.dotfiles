@@ -47,6 +47,8 @@ fi
 
 ## Cmd Shortcuts
 alias c="clear"
+alias ca="clear && ls -a"
+alias cl="clear && ls -al"
 alias la="ls -a"
 alias ll="ls -al"
 alias findf="find . -type f -iname "
