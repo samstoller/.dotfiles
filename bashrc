@@ -8,11 +8,11 @@ BASHD="$HOME/.bash.d"
 [[ -d "$BASHD" ]] || return 1
 
 ## Source files and directories in .bash.d
-for file in $BASHD/{opts,env,colors,aliases,python}; do
+for file in $BASHD/{opts,env,colors,aliases}; do
     [ -r "$file.sh" ] && [ -f "$file.sh" ] && source "$file.sh"
 done
 
-for file in $BASHD/{private,completions,prompt}/*.sh; do
+for file in $BASHD/{private,completions,prompt,tools}/*.sh; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 unset file

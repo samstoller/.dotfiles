@@ -4,9 +4,9 @@ export PROJECT_HOME=~/Development/python
 export PIP_VIRTUALENV_BASE=$WORKON_HOME
 export PIP_RESPECT_VIRTUALENV=true
 
-#if [[ `which virtualenvwrapper.sh` ]]; then
-    #source `which virtualenvwrapper.sh`
-#fi
+if [[ `which virtualenvwrapper.sh` ]]; then
+    source `which virtualenvwrapper.sh`
+fi
 
 menuvirtualenv() {
     select env in `lsvirtualenv -b`; do
