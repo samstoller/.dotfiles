@@ -1,3 +1,14 @@
+#########
+## OSX ##
+#########
+
+# Bash completion w/ brew
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    source $(brew --prefix)/etc/bash_completion
+fi
+
+## Aliases ##
+
 # Lock the screen (when going AFK)
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 

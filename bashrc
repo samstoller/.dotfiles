@@ -1,27 +1,36 @@
-# source global definiton but only if not OSX
-# OSX sources in /etc/profile !
-#if [ "$OSTYPE" =~ ^darwin && -f /etc/bashrc ]; then
-#    source /etc/bashrc
-#fi
-BASHD="$HOME/.bash.d"
+#############
+## .bashrc ##
+#############
 
+## This is where all of the core sourcing for bash is done.
+## By default, sourcing is done from .bash.d/ in your home dir.
+## The order of operations here is important so be concious
+## of this when making changes to this script.
+
+BASHD="$HOME/.bash.d"
 [[ -d "$BASHD" ]] || return 1
 
-## Source files and directories in .bash.d
+# Source core files in .bash.d/ in a specific order
+# (rather than bake the order into the filename)
 for file in $BASHD/{opts,env,colors,aliases}; do
     [ -r "$file.sh" ] && [ -f "$file.sh" ] && source "$file.sh"
 done
 
-for file in $BASHD/{private,completions,prompt,tools}/*.sh; do
-    [ -r "$file" ] && [ -f "$file" ] && source "$file"
-done
-unset file
-
-## OSX
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    . $(brew --prefix)/etc/bash_completion
+# AWS
+# Sourcing here is a based on the existence /etc/system-release
+# If your instance doesn't have this file then you will need to change the algorithm here
+if [ -e "/etc/system-release" ] && grep -q Amazon /etc/system-release; then
+    source $BASHD/aws.sh
 fi
 
+# OSX
+# Sourcing is based on the existence of a OSTYPE env var
 if [[ "$OSTYPE" =~ ^darwin ]]; then
     source $BASHD/osx.sh
 fi
+
+# Source core dirs in .bash.d/ in a specific order
+for file in $BASHD/{completions,private,prompt,tools}/*.sh; do
+    [ -r "$file" ] && [ -f "$file" ] && source "$file"
+done
+unset file
