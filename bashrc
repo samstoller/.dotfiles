@@ -35,9 +35,9 @@ for file in $BASHD/{completions,prompt,tools}/*.sh; do
 done
 
 # Source the private/ dir last
-if [[ -d "$BASHD/private" ]]
-    for file in "$BASHD/private"; do
-        [ -r "$file" ] && [ -f "$file" ] && source "$file" && echo $file
+if [[ -d "$BASHD/private" ]]; then
+    for file in $BASHD/private/*; do
+        [ -r "$file" ] && [ -f "$file" ] && source "$file"
     done
 fi
 
