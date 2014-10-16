@@ -1,0 +1,6 @@
+################
+## rcm Config ##
+################
+
+# Files listed first take precedence
+DOTFILES_DIRS="~/.dotfiles-private ~/.dotfiles"
