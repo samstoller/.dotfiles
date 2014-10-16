@@ -30,7 +30,7 @@ if [[ "$OSTYPE" =~ ^darwin ]]; then
 fi
 
 # Source core dirs in .bash.d/ in a specific order
-for file in $BASHD/{completions,private,prompt,tools}/*.sh; do
+for file in $BASHD/{completions,prompt,tools}/*.sh; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 unset file
