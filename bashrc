@@ -12,7 +12,7 @@ BASHD="$HOME/.bash.d"
 
 # Source core files in .bash.d/ in a specific order
 # (rather than bake the order into the filename)
-for file in $BASHD/{opts,env,colors,aliases}; do
+for file in $BASHD/{opts,env,colors,paths,aliases}; do
     [ -r "$file.sh" ] && [ -f "$file.sh" ] && source "$file.sh"
 done
 

@@ -2,10 +2,16 @@
 ## OSX ##
 #########
 
-# Bash completion w/ brew
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    source $(brew --prefix)/etc/bash_completion
-fi
+## Homebrew ##
+if type brew >/dev/null 2>&1; then
+
+    # For things to work correctly we have to prepend the PATH
+    PATH="$(brew --prefix josegonzalez/php/php54)/bin:/usr/local/bin:$PATH"
+
+    if [ -f $(brew --prefix)/etc/bash_completion ]; then
+        source $(brew --prefix)/etc/bash_completion
+    fi
+fi    
 
 ## Aliases ##
 
