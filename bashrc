@@ -33,4 +33,12 @@ fi
 for file in $BASHD/{completions,prompt,tools}/*.sh; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
+
+# Source the private/ dir last
+if [[ -d "$BASHD/private" ]]
+    for file in "$BASHD/private"; do
+        [ -r "$file" ] && [ -f "$file" ] && source "$file" && echo $file
+    done
+fi
+
 unset file
