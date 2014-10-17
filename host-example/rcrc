@@ -1,0 +1,13 @@
+################
+## rcm Config ##
+################
+
+# Files listed first take precedence
+DOTFILES_DIRS=".dotfiles-private .dotfiles"
+
+# Might want to set your own hostname
+# See OSX Bugs in docs for more
+#HOSTNAME="custom-hostname"
+
+# Tags for this specific host
+#TAGS="dev gmail vim"
