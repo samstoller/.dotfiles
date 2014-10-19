@@ -53,12 +53,12 @@ set matchtime=2	  " tenths of a second to blink showmatch
 " GUI Fonts & Colors {
 set t_Co=256  " better colors for vim over SSH
               "    or color-limited terms
-colorscheme desert
+colorscheme distinguished
 " }
 
 " Backup, History & Undo {
 set history=1000	 " lines of search and cmd hist
-set undolevels=1000	 " levels of undo
+
 set undofile	     " enable undos in a file
 set nobackup	     " disable backup files
 set noswapfile	     " disable swap files
@@ -107,3 +107,18 @@ autocmd Filetype gitcommit setlocal spell textwidth=72
 
 " Set to auto read when a file is changed from the outside
 "set autoread
+
+" Only do this part when compiled with support for autocommands
+if has("autocmd")
+  augroup fedora
+  autocmd!
+  " In text files, always limit the width of text to 78 characters
+  " autocmd BufRead *.txt set tw=78
+  
+  " When editing a file, always jump to the last cursor position
+  autocmd BufReadPost *
+  \ if line("'\"") > 0 && line ("'\"") <= line("$") |
+  \   exe "normal! g'\"" |
+  \ endif
+  augroup END
+endif
