@@ -1,3 +1,7 @@
+" Pathogen Plugin {
+execute pathogen#infect()
+" }
+
 " General Behavior {
 set nocompatible  " vim settings rather then old-fashioned vi
 		          "    must come first in config

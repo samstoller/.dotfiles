@@ -1,0 +1,6 @@
+[submodule "vim/bundle/CycleColor"]
+	path = vim/bundle/CycleColor
+	url = https://github.com/vim-scripts/CycleColor.git
+[submodule "vim/bundle/nerdtree"]
+	path = vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
