@@ -37,7 +37,11 @@ fi
 
 # GNU grep (for color in OSX)
 if type ggrep >/dev/null 2>&1; then
-    alias grep='ggrep '
+    alias grep='ggrep --color=always'
+
+# Grep color options
+else
+    alias grep='grep --color=always'
 fi
 
 ## Git Aliases (see also: gitconfig)

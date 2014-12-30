@@ -4,7 +4,6 @@
 
 ## Colorizations & Pagers
 export CLICOLOR=1
-export GREP_OPTIONS="--color=always"  # never/auto
 export MANPAGER="less -X"
 
 ## Editors
