@@ -3,7 +3,7 @@
 servers = (
   {
     address = "localhost";
-    port = "6668";
+    port = "6667";
     chatnet = "bitlbee";
     use_ssl = "no";
     ssl_verify = "no";
