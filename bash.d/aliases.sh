@@ -23,6 +23,9 @@ alias whois="whois -h whois-servers.net"
 ## Enable aliases to be sudo’ed
 alias sudo='sudo '
 
+## Laravel
+alias art='php artisan '
+
 ## Tools
 alias gz="tar -zcvf"
 alias ugz="tar -xvf"
