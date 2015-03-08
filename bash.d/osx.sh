@@ -13,6 +13,11 @@ if type brew >/dev/null 2>&1; then
     fi
 fi    
 
+## Composer ##
+if type composer >/dev/null 2>&1; then
+    PATH="~/.composer/vendor/bin:$PATH"
+fi
+
 ## Aliases ##
 
 # Lock the screen (when going AFK)
