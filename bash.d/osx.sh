@@ -6,12 +6,18 @@
 if type brew >/dev/null 2>&1; then
 
     # For things to work correctly we have to prepend the PATH
-    PATH="$(brew --prefix josegonzalez/php/php55)/bin:/usr/local/bin:/usr/local/sbin:$PATH"
+    if [ -f $(brew --prefix)/homebrew/php/php55 ]; then
+	    PATH="$(brew --prefix homebrew/php/php55)/bin:/usr/local/bin:/usr/local/sbin:$PATH"
+    fi
+    
+    if [ -f $(brew --prefix)/josegonzalez/php/php55 ]; then
+	    PATH="$(brew --prefix josegonzalez/php/php55)/bin:/usr/local/bin:/usr/local/sbin:$PATH"
+    fi
 
     if [ -f $(brew --prefix)/etc/bash_completion ]; then
         source $(brew --prefix)/etc/bash_completion
     fi
-fi    
+fi
 
 ## Composer ##
 if type composer >/dev/null 2>&1; then
