@@ -1,18 +1,32 @@
 [advice]
+    # Remove git status advice
     #statusHints = false
 [alias]
+    # Basics
     br = branch
     ci = commit
     co = checkout
     st = status
+    undo = checkout --
     unstage = reset HEAD --
+    sl = shortlog
+    #pl = pull --rebase
+    #ff = merge --ff-only
+
+    # Log Formatting
     last = log -1 HEAD
-    hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
-    nice = log --oneline --all --graph --decorate
+    hist = log --color --graph --date=short --pretty=format:'%C(yellow)%h%Creset %C(green)%ad%Creset | %s%C(red bold)%d%Creset %C(blue)[%an]%Creset'
+    nice = log --color --graph --decorate --oneline
+    nicer = log --color --graph --pretty=format:'%C(yellow)%h%Creset%C(red bold)%d%Creset %s %Cgreen(%cr)'
+    nicerr = log --color --graph --pretty=format:'%C(yellow)%h%Creset%C(red bold)%d%Creset %s %Cgreen(%cr) %C(blue)%an%Creset'
+
+    # Other
+    files = diff-tree --no-commit-id --name-only -r
     type = cat-file -t
     dump = cat-file -p
 [apply]
     # Detect whitespace errors when applying a patch
+    # fix is a synonym for strip
     whitespace = fix
 [core]
 	autocrlf = false
@@ -20,33 +34,52 @@
     editor = vim
     whitespace = trailing-space,space-before-tab,-indent-with-non-tab,-cr-at-eol
 	excludesfile = /Users/cira/.gitignore_global
-[merge]
-    tool = vimdiff
 [color]
+    # Set all color subsettings to true (auto)
     ui = true
 [color "branch"]
     current = yellow reverse
     local = yellow
     remote = green
+    upstream = bold green
+[color "decorate"]
+    branch = bold red
+    remoteBranch = green
+    tag = magenta
+    stash = blue
+    HEAD = bold cyan
 [color "diff"]
     meta = yellow bold
     frag = magenta bold
     old = red bold
     new = green bold
+    commit = yellow
+    whitespace = red reverse
+[color "interactive"]
+    #prompt = white
+    #header = white
+    #help = white
+    #error = white
 [color "status"]
     added = yellow
     changed = green
     untracked = cyan
+[difftool "sourcetree"]
+    cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+[help]
+    #browser = gitscm
+    format = man
+[include]
+    path = .gitconfig.user
 [merge]
     # Include summaries of merged commits in newly created merge commit messages
     log = true
-[include]
-    path = .gitconfig.user
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+    tool = vimdiff
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [push]
 	default = simple
+    #default = current
+[pull]
+    #rebase = true
