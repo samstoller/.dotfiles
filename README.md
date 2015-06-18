@@ -3,6 +3,19 @@ This repo contains my public dotfiles for *NIX machines and an accompanying Wiki
 
 The goals of this project are to be able to **backup, restore, deploy and sync** a global set of dotfiles to any machine, and to allow indvidual hosts to add new dotfiles or override existing ones as needed.
 
+My custom install:
+```bash
+$ brew tap thoughtbot/formulae
+$ brew install rcm
+$ cd ~
+$ git clone git@github.com:samstoller/.dotfiles.git
+$ git clone git@github.com:samstoller/.dotfiles-secret.git
+$ rcup -d .dotfiles-secret -d .dotfiles
+```
+
+TODO : Update Wiki, finish and simplify!!
+
+
 If you are interested in cloning this repo, please see the [Cloning This Repo](https://github.com/samstoller/.dotfiles/wiki/Cloning-This-Repo) page for details on how to integrate my dotfiles with yours.
 
 # Table of Contents
