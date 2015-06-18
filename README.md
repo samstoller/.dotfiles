@@ -15,9 +15,6 @@ $ rcup -d .dotfiles-secret -d .dotfiles
 
 TODO : Update Wiki, finish and simplify!!
 
-
-If you are interested in cloning this repo, please see the [Cloning This Repo](https://github.com/samstoller/.dotfiles/wiki/Cloning-This-Repo) page for details on how to integrate my dotfiles with yours.
-
 # Table of Contents
 [1 Dotfiles!](https://github.com/samstoller/.dotfiles/wiki/1-Dotfiles!)
 
