@@ -21,6 +21,7 @@
     nicerr = log --color --graph --pretty=format:'%C(yellow)%h%Creset%C(red bold)%d%Creset %s %Cgreen(%cr) %C(blue)%an%Creset'
 
     # Other
+    exclude = !sh -c 'echo "$1" >> .git/info/exclude' -
     files = diff-tree --no-commit-id --name-only -r
     type = cat-file -t
     dump = cat-file -p
