@@ -84,3 +84,5 @@
     #default = current
 [pull]
     #rebase = true
+[fetch]
+	prune = true
