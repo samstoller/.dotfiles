@@ -4,6 +4,7 @@
 [alias]
     # Basics
     br = branch
+    brr = branch --sort=committerdate
     ci = commit
     co = checkout
     st = status
